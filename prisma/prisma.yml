@@ -1,0 +1,9 @@
+#endpoint: https://eu1.prisma.sh/nadezhda-4da18a/hackernews-node/dev
+#prisma admin: https://eu1.prisma.sh/nadezhda-4da18a/hackernews-node/dev/_admin
+endpoint: https://eu1.prisma.sh/nadezhda-4da18a/hackernews-node/dev
+
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
