@@ -8,8 +8,15 @@ async function main(){
     })
     console.log(`Created new link: ${newLink.url} (ID: ${newLink.id})`)
 
-    const allLinks = await prisma.links();
-    console.log(allLinks)
+    const updatedLink = await prisma.updateLink(
+        {where: { id: "ckbjg9a96ts3l0968dzr0bzuz"},
+            data: {url: "www.test.de",
+        description:"My new description"
+        },
+    })
+    console.log(`updated link: ${updatedLink.description}, ${updatedLink.url}`)
+    //const allLinks = await prisma.links();
+    //console.log(allLinks)
 }
 
 main().catch(e => console.error(e))
